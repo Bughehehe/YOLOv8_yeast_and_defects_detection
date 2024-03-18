@@ -29,7 +29,7 @@ def main():
         image = np.array(bytearray(uploaded_image.read()), dtype=np.uint8)
         image = cv2.imdecode(image, cv2.IMREAD_COLOR)
 
-        results = model.predict(image, save=True)
+        results = model.predict(image, save=True, project="./runs/detect/")
         result = results[0]
 
         count_yeast = 0
